@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Statvalues from './Statvalues';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
@@ -16,10 +16,10 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
 );
 
 Statistics.propTypes = {
-  good: propTypes.number.isRequired,
-  neutral: propTypes.number.isRequired,
-  bad: propTypes.number.isRequired,
-  total: propTypes.number.isRequired,
-  positivePercentage: propTypes.string.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
 };
 export default Statistics;

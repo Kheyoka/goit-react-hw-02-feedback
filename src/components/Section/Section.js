@@ -40,8 +40,6 @@ export default class Section extends Component {
     const { title } = this.props;
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
-    const total = this.countTotalFeedback();
-    // const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
 
     return (
       <section>
@@ -55,7 +53,7 @@ export default class Section extends Component {
             good={good}
             neutral={neutral}
             bad={bad}
-            total={total}
+            total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         ) : (
