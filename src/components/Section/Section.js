@@ -26,20 +26,22 @@ export default class Section extends Component {
     }));
   };
 
-  countTotal = () => {
+  countTotalFeedback = () => {
     return Object.values(this.state).reduce((acc, e) => acc + e);
   };
 
-  countPositiveFeedback = () => {
-    return `${((this.state.good / this.countTotal()) * 100).toFixed(0)}%`;
+  countPositiveFeedbackPercentage = () => {
+    return `${((this.state.good / this.countTotalFeedback()) * 100).toFixed(
+      0,
+    )}%`;
   };
 
   render() {
     const { title } = this.props;
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
-    const total = this.countTotal();
-    const positiveFeedbackPercentage = this.countPositiveFeedback();
+    const total = this.countTotalFeedback();
+    // const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
 
     return (
       <section>
@@ -48,13 +50,13 @@ export default class Section extends Component {
           options={options}
           onLeaveFeedback={this.countonLeaveFeedback}
         />
-        {this.countTotal() > 0 ? (
+        {this.countTotalFeedback() > 0 ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
             total={total}
-            positiveFeedback={positiveFeedbackPercentage}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         ) : (
           <Notification message="No feedback given" />

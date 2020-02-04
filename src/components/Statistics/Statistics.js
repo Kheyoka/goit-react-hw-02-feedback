@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Statvalues from './Statvalues';
 
-const Statistics = ({ good, neutral, bad, total, positiveFeedback }) => (
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <>
     <h2>Statistics</h2>
     <ul style={{ listStyle: 'none' }}>
@@ -10,7 +10,7 @@ const Statistics = ({ good, neutral, bad, total, positiveFeedback }) => (
       <Statvalues name="Neutral" value={neutral} />
       <Statvalues name="Bad" value={bad} />
       <Statvalues name="Total" value={total} />
-      <Statvalues name="Positive feedback" value={positiveFeedback} />
+      <Statvalues name="Positive feedback" value={positivePercentage} />
     </ul>
   </>
 );
@@ -20,6 +20,6 @@ Statistics.propTypes = {
   neutral: propTypes.number.isRequired,
   bad: propTypes.number.isRequired,
   total: propTypes.number.isRequired,
-  positiveFeedback: propTypes.string.isRequired,
+  positivePercentage: propTypes.string.isRequired,
 };
 export default Statistics;
