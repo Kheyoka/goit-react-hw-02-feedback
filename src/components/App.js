@@ -1,9 +1,9 @@
 import React from 'react';
-import Section from './Section/Section';
+import FeedBack from './FeedBack/FeedBack';
 
 const App = () => (
   <>
-    <Section />
+    <FeedBack />
   </>
 );
 
